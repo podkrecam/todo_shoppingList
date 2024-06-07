@@ -1,0 +1,107 @@
+:root {
+  --primary-color-start: rgb(86, 214, 218);
+  --primary-color-end: rgb(231, 44, 175);
+  --text-color: rgb(119, 117, 117);
+  --font-size-404: 12em;
+  --font-size-oops: 2em;
+  --font-size-message: 1.5em;
+  --gradient-duration: 3s;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 1fr 12fr 1fr;
+}
+
+/* PAGE 404 */
+.no-found {
+  background-color: white;
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 1em;
+  text-align: center;
+}
+
+.num-404 {
+  font-size: var(--font-size-404);
+  background-image: linear-gradient(
+    to right top,
+    var(--primary-color-start) 20%,
+    var(--primary-color-end) 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.oops {
+  font-size: var(--font-size-oops);
+  color: var(--text-color);
+}
+
+.message-404 {
+  font-size: var(--font-size-message);
+  font-weight: 100;
+  margin-bottom: 1em;
+}
+
+.return-home {
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color-start) 20%,
+    var(--primary-color-end) 80%
+  );
+  display: inline-block;
+  margin-top: 1em;
+  border-radius: 2em;
+  cursor: pointer;
+  border: none;
+  padding: 1em 0;
+  transition-duration: 0.4s;
+  font-weight: bold;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.return-home:hover {
+  animation: gradient_move var(--gradient-duration) ease infinite;
+  background-size: 200% auto;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+@keyframes gradient_move {
+  0% {
+    background-position: 0% 92%;
+  }
+  50% {
+    background-position: 100% 9%;
+  }
+  100% {
+    background-position: 0% 92%;
+  }
+}
+
+.return-home a {
+  color: white;
+  text-decoration: none;
+  padding: 1em 3em;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 800px) {
+  :root {
+    --font-size-404: 8em;
+    --font-size-oops: 1.5em;
+    --font-size-message: 1em;
+  }
+}

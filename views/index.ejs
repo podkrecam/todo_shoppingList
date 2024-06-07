@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/index.js" defer></script>
+  </head>
+  <body>
+    <%- include ("partials/header") %>
+    <div class="buttons">
+      <button class="login-btn btn">Login</button>
+      <button class="register-btn btn">Join now</button>
+    </div>
+
+    <aside><img class="logo-tick" src="img/logo-tick.svg" alt="" /></aside>
+    <main>
+      <h1>
+        Manage your time like <br />
+        never before.
+      </h1>
+      <p>
+        Plan your days and achieve your goals with ease. With ToDo List, your
+        tasks are always under control, allowing you to focus on what truly
+        matters.
+      </p>
+      <p>
+        <button class="register-btn btn">Join now</button> today and organize
+        your life better than ever.
+      </p>
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

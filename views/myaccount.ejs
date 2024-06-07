@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/myaccount.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/myaccount.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div><img src="/img/logo.png" alt="" /></div>
+
+      <div class="account-container">
+        <button class="logout-btn btn" type="submit">Log Out</button>
+        <div id="user-settings-btn" class="btn">
+          <p class="account-name"></p>
+          <img
+            id="small-avatar"
+            src="/img/default-avatar.svg"
+            alt=""
+            width="30px"
+          />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="manage-tasks">
+        <h1 class="tasks-title">My Tasks</h1>
+        <div class="add-task">
+          <form class="add-task-form" action="/tasks" method="post">
+            <div class="form-group">
+              <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Add new task"
+                required
+              />
+            </div>
+            <div class="custom-select">
+              <select class="btn" name="category" id="category">
+                <option value="" disabled selected="selected">
+                  Choose category...
+                </option>
+                <option value="Other">Other</option>
+                <option value="Personal">Personal</option>
+                <option value="School">School</option>
+                <option value="Work">Work</option>
+              </select>
+            </div>
+            <button type="submit" class="add-task-btn btn">ADD</button>
+          </form>
+          <p class="info-message"></p>
+          <div class="filter">
+            <select class="btn" name="category-filter" id="category-filter">
+              <option value="">All</option>
+              <option value="Other">Other</option>
+              <option value="Personal">Personal</option>
+              <option value="School">School</option>
+              <option value="Work">Work</option>
+            </select>
+            <select class="btn" name="status-filter" id="status-filter">
+              <option value="">All</option>
+              <option value="true">Completed</option>
+              <option value="false">Uncompleted</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="tasks-container">
+        <!-- CONTAINER TO STORE ALL TASKS -->
+      </div>
+
+      <!-- USER SETTINGS MODAL -->
+      <div class="settings-modal hidden">
+        <button class="close-modal">&times;</button>
+        <div class="avatar-cointainer">
+          <img id="avatar" src="/img/default-avatar.svg" alt="" />
+          <img id="delete-avatar" src="img/delete.svg" alt="" width="16px" />
+          <div>
+            <label>
+              <img
+                id="upload-avatar"
+                src="img/upload.svg"
+                alt=""
+                width="16px"
+              />
+            </label>
+            <input
+              type="file"
+              id="upload-file"
+              style="display: none"
+              accept=".png, .jpg, .jpeg"
+            />
+          </div>
+        </div>
+        <form class="settings-form" action="/users/register" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              class="settings-input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Type your name"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              class="settings-input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Type your email"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input
+              class="settings-input"
+              type="age"
+              id="age"
+              name="age"
+              placeholder="Type your age"
+              required
+            />
+          </div>
+          <p class="error-message"></p>
+          <button type="submit" class="save-btn btn">SAVE</button>
+        </form>
+        <p><span class="logout-all">Log out</span> from all sessions</p>
+        <br />
+        <div class="delete-account-container">
+          <button class="delete-account">Delete account</button>
+          <div class="delete-buttons hidden">
+            <p class="delete-question">Are you sure?</p>
+            <button class="yes-btn btn">Yes 🥲</button>
+            <button class="no-btn btn">No 😃</button>
+          </div>
+        </div>
+      </div>
+      <div class="overlay hidden"></div>
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

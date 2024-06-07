@@ -1,0 +1,44 @@
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 1fr 12fr 1fr;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: fit-content;
+  height: min-content;
+  background-color: white;
+  padding: 3em;
+  border-radius: 1em;
+  box-shadow: 0 3em 5em rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > * {
+  text-align: center;
+  margin: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(231, 44, 175);
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+a:hover {
+  transform: scale(1.1);
+}

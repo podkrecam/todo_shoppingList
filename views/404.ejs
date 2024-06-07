@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/weather-icon.svg" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/404.css" />
+    <title>OPPS - Page Not Found</title>
+  </head>
+  <body>
+    <%- include ("partials/header") %>
+    <main class="no-found">
+      <div>
+        <p class="num-404">404</p>
+        <p class="oops">OPPS! PAGE NOT FOUND</p>
+      </div>
+      <div>
+        <p class="message-404">
+          Sorry, the page you're looking for doesn't exist.
+        </p>
+        <span class="return-home"><a href="/">RETURN HOME</a></span>
+      </div>
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

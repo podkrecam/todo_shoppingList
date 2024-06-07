@@ -1,0 +1,120 @@
+body {
+  display: grid;
+  grid-template-areas:
+    "logo buttons"
+    "main aside"
+    "footer footer";
+  grid-template-rows: 1fr 12fr 1fr;
+  grid-template-columns: 2fr 1fr;
+}
+.logo {
+  grid-area: logo;
+}
+
+.logo-tick {
+  display: inline;
+  animation: myAnim 5s ease 0s infinite forwards;
+}
+@keyframes myAnim {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.buttons {
+  grid-area: buttons;
+}
+/*MAIN */
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 50%;
+  margin: auto;
+  border-radius: 3em;
+  color: white;
+  text-align: justify;
+}
+aside {
+  grid-area: aside;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.btn {
+  border: 0;
+  border-radius: 1em;
+  padding: 0.6em;
+  font-weight: bold;
+  font-size: 1.1em;
+  width: 150px;
+  cursor: pointer;
+  margin: 0.5em;
+  text-wrap: nowrap;
+  transition-duration: 0.4s;
+  font-weight: bold;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 700px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  footer {
+    margin-bottom: 1em;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+  .buttons button {
+    width: 70%;
+  }
+  .modal {
+    width: 70%;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo a {
+    display: block;
+  }
+  .logo-tick {
+    width: 200px;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  body {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  body {
+    width: 70%;
+  }
+}

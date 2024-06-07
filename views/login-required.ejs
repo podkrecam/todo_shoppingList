@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login rqquired</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/loginRequired.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <%- include ("partials/header") %>
+    <main>
+      <div class="container">
+        <h1>Authentication Required</h1>
+        <p>
+          Your session has expired or you need to log in to access this page.
+        </p>
+        <a style="display: block;" href="/login">Click here to log in</a>
+      </div>
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>
